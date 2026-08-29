@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f3dfc1">
+<title>1st Anniversary — โมเมทน์ & แทนคุณ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@300;400;500;600&display=swap');
+:root{--cream:#fff7e9;--paper:#fffaf1;--brown:#6f4b36;--brown2:#8b6549;--pink:#e99a9d;--gold:#e8bd66;--ink:#4e392d;--shadow:0 20px 60px rgba(85,57,39,.18)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#efe1ca;color:var(--ink);font-family:Kanit,sans-serif}
+body{overflow-x:hidden}.app{min-height:100vh;background:radial-gradient(circle at 50% -10%,#fffdf6 0 25%,transparent 45%),linear-gradient(135deg,#f7ecd9,#e9d4b6)}
+.screen{min-height:100vh;display:none;place-items:center;padding:24px 16px;position:relative;overflow:hidden}.screen.active{display:grid}
+.card{width:min(430px,100%);background:rgba(255,250,241,.94);border:1px solid rgba(111,75,54,.12);border-radius:30px;padding:28px 22px;box-shadow:var(--shadow);position:relative;z-index:2}
+h1,h2,.script{font-family:Itim,cursive}.title{font-size:42px;line-height:1.05;text-align:center;margin:0 0 8px}.sub{text-align:center;color:#8b6b57;margin:0 0 24px}.tiny{text-align:center;font-size:12px;color:#9b806d}
+.float{position:absolute;inset:0;pointer-events:none}.float span{position:absolute;font-size:24px;animation:rise 7s linear infinite;opacity:.6}.float span:nth-child(1){left:8%;top:72%;animation-delay:-2s}.float span:nth-child(2){left:80%;top:65%;animation-delay:-4s}.float span:nth-child(3){left:18%;top:18%;animation-delay:-5s}.float span:nth-child(4){left:72%;top:25%;animation-delay:-1s}.float span:nth-child(5){left:48%;top:85%;animation-delay:-3s}@keyframes rise{to{transform:translateY(-120vh) rotate(18deg);opacity:0}}
+.envelope-wrap{display:grid;place-items:center;margin:18px 0 28px}.envelope{width:260px;height:175px;background:#6d4a35;border-radius:5px 5px 15px 15px;position:relative;box-shadow:0 18px 30px rgba(69,43,26,.22);cursor:pointer;transform-style:preserve-3d}.envelope:before{content:"";position:absolute;inset:0;background:radial-gradient(#e7c46c 1.5px,transparent 2px);background-size:22px 22px;opacity:.7}.flap{position:absolute;left:0;top:0;width:0;height:0;border-left:130px solid transparent;border-right:130px solid transparent;border-top:95px solid #80593e;transform-origin:50% 0;transition:.8s;z-index:3}.letter{position:absolute;background:#fffaf0;width:185px;height:108px;left:38px;top:30px;padding:17px 10px;text-align:center;z-index:2;box-shadow:0 6px 16px rgba(0,0,0,.12);transition:.8s}.envelope.open .flap{transform:rotateX(175deg)}.envelope.open .letter{transform:translateY(-75px);z-index:5}.btn{border:0;border-radius:999px;background:var(--brown);color:white;padding:13px 22px;font:500 16px Kanit;cursor:pointer;box-shadow:0 8px 18px rgba(111,75,54,.22)}.btn.light{background:#ead6b8;color:#604533}.btn.full{width:100%}
+.lock-title{text-align:center;font-size:34px;margin:0}.lock-art{text-align:center;font-size:62px;margin:8px}.pin{display:flex;gap:8px;justify-content:center;margin:18px}.dot{width:13px;height:13px;border-radius:50%;border:1.5px solid #a9876b}.dot.filled{background:var(--brown)}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.key{border:0;background:#fff;border-radius:14px;padding:13px 4px;font-size:20px;color:var(--ink);box-shadow:0 3px 10px rgba(80,55,35,.09);cursor:pointer}.key small{display:block;font-size:9px;color:#987b66;letter-spacing:.5px}.error{text-align:center;color:#b85c5c;height:22px;font-size:13px}
+.chat{display:flex;flex-direction:column;gap:12px;margin:22px 0}.bubble{max-width:82%;padding:12px 15px;border-radius:20px;background:#f1d9d3;line-height:1.55}.bubble.me{align-self:flex-end;background:#ead9b8}.chat-note{text-align:center;color:#a08370;font-size:13px}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.polaroid{background:#fff;padding:8px 8px 25px;box-shadow:0 10px 20px rgba(70,45,30,.16);transform:rotate(-2deg)}.polaroid:nth-child(2){transform:rotate(3deg)}.polaroid:nth-child(3){transform:rotate(-3deg);grid-column:1/-1;width:75%;justify-self:center}.polaroid img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}.caption{text-align:center;margin-top:7px;font-family:Itim;font-size:18px}.letter-paper{background:#f5e6c8;padding:28px 20px;border-radius:6px;box-shadow:inset 0 0 35px rgba(109,75,45,.08);font-family:Itim,cursive;font-size:21px;line-height:1.65;position:relative}.letter-paper:before{content:"";position:absolute;inset:8px;border:1px dashed rgba(111,75,54,.18);pointer-events:none}.signature{text-align:right;margin-top:15px}.big-heart{text-align:center;font-size:70px;animation:pulse 1.4s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.12)}}.promise{text-align:center}.promise h2{font-size:48px;margin:4px 0}.counter{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.counter div{background:#f4e4cb;border-radius:15px;padding:10px}.counter b{display:block;font-size:24px}.counter span{font-size:11px;color:#8c6f5b}
+.music{position:fixed;right:12px;bottom:12px;z-index:20}.music button{border:0;border-radius:999px;background:#fff8eb;color:var(--brown);padding:10px 14px;box-shadow:0 8px 22px rgba(80,50,30,.15);cursor:pointer}
+.fade{animation:fade .55s ease}@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(max-width:380px){.title{font-size:36px}.card{padding:22px 16px}.envelope{transform:scale(.9)}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="float"><span>♥</span><span>♥</span><span>✦</span><span>♥</span><span>✦</span></div>
+
+  <section id="welcome" class="screen active">
+    <div class="card fade">
+      <div style="text-align:center;font-size:30px">♡　♥　♡</div>
+      <h1 class="title">สุขสันต์วันครบรอบ 1 ปี!</h1>
+      <p class="sub">29 สิงหาคม 2026</p>
+      <div class="envelope-wrap">
+        <div id="envelope" class="envelope" onclick="openEnvelope()">
+          <div class="flap"></div><div class="letter">นี่คือเซอร์ไพรส์<br>ของคุณ... 💌</div>
+        </div>
+      </div>
+      <button class="btn full" onclick="openEnvelope()">คลิกเพื่อเปิด 💗</button>
+      <p class="tiny">โมเมทน์ ♡ แทนคุณ</p>
+    </div>
+  </section>
+
+  <section id="lock" class="screen">
+    <div class="card fade">
+      <div class="lock-art">🔐✨</div>
+      <h2 class="lock-title">UNLOCK</h2>
+      <p class="sub">ใส่รหัสวันครบรอบของเราเพื่อปลดล็อค</p>
+      <div class="pin" id="pin"><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+      <div class="error" id="error"></div>
+      <div class="keypad">
+        <button class="key" onclick="press(1)">1</button><button class="key" onclick="press(2)">2<small>ABC</small></button><button class="key" onclick="press(3)">3<small>DEF</small></button>
+        <button class="key" onclick="press(4)">4<small>GHI</small></button><button class="key" onclick="press(5)">5<small>JKL</small></button><button class="key" onclick="press(6)">6<small>MNO</small></button>
+        <button class="key" onclick="press(7)">7<small>PQRS</small></button><button class="key" onclick="press(8)">8<small>TUV</small></button><button class="key" onclick="press(9)">9<small>WXYZ</small></button>
+        <span></span><button class="key" onclick="press(0)">0</button><button class="key" onclick="backspace()">⌫</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="chat" class="screen">
+    <div class="card fade">
+      <h2 class="title" style="font-size:36px">จำได้ไหม? 💬</h2>
+      <div class="chat">
+        <div class="bubble">เธอจำได้ไหม วันที่เราเจอกันครั้งแรก? 🥹</div>
+        <div class="bubble me">จำได้สิ! 💗</div>
+        <div class="bubble">วันเวลาผ่านไปเร็วเหมือนกันนะ จากวันนั้นจนวันนี้ก็ครบ 1 ปีแล้ว</div>
+        <div class="bubble me">ขอบคุณที่อยู่ด้วยกันมาตลอดนะ</div>
+      </div>
+      <button class="btn full" onclick="show('gallery')">ไปดูความทรงจำของเรากัน 📸</button>
+    </div>
+  </section>
+
+  <section id="gallery" class="screen">
+    <div class="card fade">
+      <h2 class="title" style="font-size:38px">ความทรงจำของเรา 📷</h2>
+      <p class="sub">เก็บช่วงเวลาดี ๆ ของ โมเมทน์ & แทนคุณ</p>
+      <div class="photos">
+        <div class="polaroid"><img src="memory1.jpg" alt="ความทรงจำของเรา" loading="eager" onerror="this.onerror=null;this.src='images/memory1.jpg'"><div class="caption">ทริปแรกของเรา 💕</div></div>
+        <div class="polaroid"><img src="memory2.jpg" alt="ความทรงจำของเรา" loading="eager" onerror="this.onerror=null;this.src='images/memory2.jpg'"><div class="caption">โมเมนต์ของเรา</div></div>
+        <div class="polaroid"><img src="memory3.jpg" alt="ความทรงจำของเรา" loading="eager" onerror="this.onerror=null;this.src='images/memory3.jpg'"><div class="caption">29.08 — วันของเรา</div></div>
+      </div>
+      <button class="btn full" onclick="show('letter')">มีจดหมายถึงเธอ 💌</button>
+    </div>
+  </section>
+
+  <section id="letter" class="screen">
+    <div class="card fade">
+      <h2 class="title" style="font-size:38px">ถึง แทนคุณ 💌</h2>
+      <div class="letter-paper">
+        ขอบคุณนะค้าบบที่อยู่ด้วยกันมาตลอด 1 ปี เมทขอบคุณนะคั้บที่พี่เป็นคนที่ค่อยให้คำแนะนำ คนที่ค่อยให้กำลังใจตลอด<br><br>
+        ขอบคุณที่ให้ความรักที่ดีกับหนูน้า หนูก็จะอยู่เป็นความน่ารักกับพี่ตลอดไปเลย หนูจะรักแฟนคนโปรดคนนี้ให้ดีที่สุด<br><br>
+        ขอบคุณที่อยู่ด้วยกันนะคั้บ เมทรักพี่แทนคุณมากกกกก 💗<br>
+        <div class="signature">จากคุณแฟน<br>— โมเมทน์ ♡</div>
+      </div>
+      <button class="btn full" style="margin-top:16px" onclick="show('final')">อ่านข้อความสุดท้าย ✨</button>
+    </div>
+  </section>
+
+  <section id="final" class="screen">
+    <div class="card fade promise">
+      <div class="big-heart">♥</div>
+      <h2>To many more years.</h2>
+      <p style="font-size:19px;line-height:1.7">ขอให้วันนี้เป็นอีกหนึ่งหน้าของเรื่องราวดี ๆ ของเรา<br>และขอให้มีหน้าถัดไปอีกเยอะ ๆ เลยนะ</p>
+      <div class="counter" id="counter">
+        <div><b id="days">0</b><span>วัน</span></div>
+        <div><b id="hours">0</b><span>ชั่วโมง</span></div>
+        <div><b id="mins">0</b><span>นาที</span></div>
+      </div>
+      <p class="tiny">ครบรอบตั้งแต่ 29 สิงหาคม 2025</p>
+      <button class="btn light" onclick="show('gallery')">ย้อนดูรูปอีกครั้ง 📸</button>
+    </div>
+  </section>
+</div>
+
+<div class="music">
+  <button onclick="openSpotify()">🎵 เปิดเพลงของเรา</button>
+</div>
+
+<script>
+const start = new Date('2025-08-29T00:00:00+07:00');
+let pin='';
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function openEnvelope(){
+  document.getElementById('envelope').classList.add('open');
+  setTimeout(()=>show('lock'),850);
+  openSpotify();
+}
+function press(n){
+  if(pin.length>=4)return;
+  pin+=n; renderPin();
+  if(pin.length===4){
+    setTimeout(()=>{
+      if(pin==='2908'){pin='';renderPin();show('chat')}
+      else{document.getElementById('error').textContent='รหัสยังไม่ถูกนะ ลองใหม่อีกครั้ง 💗';pin='';renderPin();}
+    },180);
+  }
+}
+function backspace(){pin=pin.slice(0,-1);renderPin();document.getElementById('error').textContent=''}
+function renderPin(){document.querySelectorAll('#pin .dot').forEach((d,i)=>d.classList.toggle('filled',i<pin.length))}
+function openSpotify(){
+  window.open('https://open.spotify.com/track/79S6mQUxOs8ANRmJTS7agU?si=8ortZVkATkCYeAgMVaBjrg&utm_source=copy-link','_blank','noopener');
+}
+function updateCounter(){
+  const now=new Date(); const ms=Math.max(0,now-start);
+  const days=Math.floor(ms/86400000); const hours=Math.floor(ms/3600000)%24; const mins=Math.floor(ms/60000)%60;
+  document.getElementById('days').textContent=days.toLocaleString('th-TH');
+  document.getElementById('hours').textContent=hours;
+  document.getElementById('mins').textContent=mins;
+}
+updateCounter();setInterval(updateCounter,30000);
+</script>
+</body>
+</html>
